@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<meta http-equiv=X-UA-Compatible content="IE=edge">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta name=description content="">
+	<meta name=author content="">
+	<link rel=icon href=/Content/AssetsBS3/img/favicon.ico>
+	<title>Fixed Top Navbar Example for Bootstrap</title>
+	<link href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css rel=stylesheet>
+	<link href=/Content/AssetsBS3/examples/navbar-fixed-top.css rel=stylesheet> 
+	<!--[if lt IE 9]><script src=~/Scripts/AssetsBS3/ie8-responsive-file-warning.js></script><![endif]-->
+	<script src=/Scripts/AssetsBS3/ie-emulation-modes-warning.js></script>
+	<!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+	<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+	<style type="text/css">
+      div.information {
+		width: 420px;
+		float: left;
+	  }
+	  div.text {
+	  	width: 600px;
+		padding:10px 0 0 30px;
+		float: right;
+	  }
+	  
+	  #map {
+		width: 645px;
+		height: 675px;
+      }
+	
+	  table tr td.candidate-name {
+		font-size:1em;
+		font-weight:bold;
+		vertical-align:middle;
+		width:90px;
+		padding:0 20px 0 20px
+	  }
+	  
+	  table tr td.count {
+		font-size:15px;
+		vertical-align:middle;
+		width:70px
+	  }
+	  
+	  table tr td.pct {
+		vertical-align:middle;
+		font-weight:bold;
+		font-size:2.1em;
+		text-align:right
+	  }
+	  
+	  table tr td.win {
+		width:20px;
+		font-size:2em;
+		vertical-align:middle;
+		padding-left:10px;
+	  }
+	  
+	  line.legend-line {
+		stroke-width:1;
+		stroke:#333
+	  }
+	  
+	  text.legend-pct {
+		fill:#333;
+		font-size:.9em;
+		text-anchor:middle
+	  }
+	  
+	  text.legend-label {
+		fill:#333;
+		font-size:1em
+	  }
+	  
+	  .map_tooltip #dv_name{
+		  font-weight:bold;
+		  font-size:18px;
+		  margin-bottom:3px
+	  }
+	  
+	  .map_tooltip .candidate{
+		  font-weight:600;
+	  }
+	  .map_tooltip .pct{
+		  font-size:25px;
+		  font-weight:600;
+	  }
+	  .axis path,.axis line {
+		fill: none;
+		stroke: #000;
+		shape-rendering: crispEdges;
+	  }
+	  
+	  .town_fg,.point_fg{
+		fill: none;
+		stroke: #333;
+		stroke-width: 2;
+	  }	
+	  .town_fg_hidden,.point_fg_hidden{
+		fill: none;
+		stroke: none;
+		stroke-width: 1;
+	  }
+	  circle.dot {
+		stroke: #333;  
+		stroke-width: 1.5;  
+	  }
+	  
+	  
+    </style>	
+</head>	
+<body> 
+	<nav class="navbar navbar-default navbar-fixed-top" role=navigation>
+		<div class=container>
+			<div class=navbar-header>
+				<button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#navbar aria-expanded=false aria-controls=navbar> <span class=sr-only>Toggle navigation</span> 
+					<span class=icon-bar></span> 
+					<span class=icon-bar></span> 
+					<span class=icon-bar></span> 
+				</button> 
+				<span class=navbar-brand>資料好朋友</span>
+			</div>
+			<div id=navbar class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="index.html">介紹</a>
+					<li class=active>
+						<a href="village.html">2016投票地圖</a>
+						</ul>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class=container>
+	<div class=jumbotron>
+		<h2>2015總統大選，候選人在臺北市各里得票資訊</h2>
+			<div class="information">
+				<table class="table">
+					<tr class="KMT " data-candidate="39356166">
+						<td class="candidate-mug">
+						  <img alt="朱立倫" src="image/CHU.png" width="65" />
+						</td>
+						<td class="candidate-name">
+						  朱立倫
+						</td>
+						<td class="count">546,491</td>
+						<td class="pct" style="color:#5B6A95">37.49%</td>
+						<td class="win"><span></span></td>
+					</tr>
+					<tr class="DPP" data-candidate="39355142">
+						<td class="candidate-mug">
+						  <img alt="蔡英文" src="image/TSAI.png" width="65" />
+						</td>
+						<td class="candidate-name" style="">蔡英文</td>
+						<td class="count">757,383</td>
+						<td class="pct" style="color:#55AA55">51.95%</td>
+						<td class="win"><img alt="winner" src="image/130px-Vote.png" /></td>
+					</tr>
+					<tr class="PFP " data-candidate="39356166">
+						<td class="candidate-mug">
+						  <img alt="宋楚瑜" src="image/SUNG.png" width="65" />
+						</td>
+						<td class="candidate-name">
+						  宋楚瑜
+						</td>
+						<td class="count">153,804</td>
+						<td class="pct" style="color:#FF9224">10.55%</td>
+						<td class="win"><span></span></td>
+					</tr>
+				</table>
+			</div>
+			<div class="text">
+				<p>2016年初，台灣總統選舉落幕，由民進黨的蔡英文女士當選總統。本站試圖將不同政府單位所提供的資料整合，來呈現台北市各里的所得和年齡與政黨傾向之間的關聯性。</p>
+				<p>在年齡的資料上，我使用2015年12月的戶籍人口統計月報，並且配合法定的投票年齡，我只計算20歲以上的人口來當作里平均年齡。</p>
+				<p>所得部分，則使用了2014年綜合所得稅的資料(2015的綜合所得尚未公布)，其次，由於所得收入取平均數容易受到非常有錢的富翁影響，為了避免這樣的極端值，因此採用中位數來進行分析。</p>
+			</div>
+		<div style="clear:both;"></div>
+		<hr>
+		<div id="data"></div>
+		<hr>
+		<div id="analysis">
+			<p>從上面的台北市地圖我們可以看到，2016的選舉，台北市各里幾乎都是投給民進黨的比例較高，只有在靠近西南方，接近萬芳、木柵一帶以及一些零星的里是由國民黨領先。</p>
+			<p>再來從散佈圖的資訊中，我們可以看到顏色越深的綠色越集中在下方，這代表著在民進黨擁有高得票率的那些里，其所得通常是偏低的。但這並<span style="font-weight:bold">不表示</span>越有錢的里越傾向投給國民黨，</p>
+			<p>而國民黨領先的那些里，平均年齡都高於46歲。也就是說，年輕的里較傾向把票投給蔡英文</p>
+		</div>
+    </div>
+	</div>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.js"></script>
+	<script src="main.js"</script>
+	
+	<script src=https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js></script>
+	<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js></script>
+	<script src=/Scripts/AssetsBS3/ie10-viewport-bug-workaround.js></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("input").on("click", function () {
+				$("#log").html($( "input:checked" ).val());
+			});
+        });
+    </script>
+</body>
+</html>	

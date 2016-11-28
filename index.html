@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+	<meta http-equiv=X-UA-Compatible content="IE=edge">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta name=description content="">
+	<meta name=author content="">
+	<link rel=icon href=/Content/AssetsBS3/img/favicon.ico>
+	<title>Fixed Top Navbar Example for Bootstrap</title>
+	<link href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css rel=stylesheet>
+	<link href=/Content/AssetsBS3/examples/navbar-fixed-top.css rel=stylesheet> 
+	<!--[if lt IE 9]><script src=~/Scripts/AssetsBS3/ie8-responsive-file-warning.js></script><![endif]-->
+	<script src=/Scripts/AssetsBS3/ie-emulation-modes-warning.js></script> 
+	<!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+	<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<body> 
+	<nav class="navbar navbar-default navbar-fixed-top" role=navigation>
+		<div class=container>
+			<div class=navbar-header>
+				<button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#navbar aria-expanded=false aria-controls=navbar> <span class=sr-only>Toggle navigation</span> 
+					<span class=icon-bar></span> 
+					<span class=icon-bar></span> 
+					<span class=icon-bar></span> 
+				</button> 
+				<span class=navbar-brand>資料好朋友</span>
+			</div>
+			<div id=navbar class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class=active>
+						<a href="index.html">介紹</a>
+					<li>
+						<a href="village.html">2016投票地圖</a>
+						</ul>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class=container>
+		<div class=jumbotron>
+			<h2>簡介</h2>
+			<p>本研究收集了2016總統大選的投票資訊，搭配台北市各里的所得和年齡，將呈現政黨傾向和所得以及年齡之間的關聯性為何？
+			<p>藉由D3.js製作出各里投票、所得和年齡的比較地圖，並再透過散步圖呈現三者之間的關聯性，最後嘗試以統計的方式，使用Pearson相關找出三者彼此間的相關程度。
+			<p>資料來源：
+			<p><a href=http://www.fia.gov.tw/lp.asp?CtNode=236&CtUnit=9&BaseDSD=1&mp=1>財政部財政資訊中心</a>
+			<p><a href=http://data.moi.gov.tw/MoiOD/Data/DataDetail.aspx?oid=F4478CE5-7A72-4B14-B91A-F4701758328F>內政資料開放平台</a>
+			<p><a href=http://db.cec.gov.tw/>選舉資料庫網站</a>
+	
+		</div>
+	</div>
+	<script src=https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js></script>
+	<script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js></script>
+	<script src=/Scripts/AssetsBS3/ie10-viewport-bug-workaround.js></script>
+</body>
+</html>	
