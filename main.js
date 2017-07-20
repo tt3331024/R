@@ -268,20 +268,20 @@
 		});
 
 		// 各里投票結果提示區塊
-			tooltip = function(){
-				tooltip = svg.append("g").attr({
-							"class": "map_tooltip",
-							transform: "translate(10, 10)"
-				}),
-				tooltip.append("text").attr({'class': 'title'})
-								.style({"font-size":20+"px", fill:"#444", "font-weight":"bold"})
-								.text("台北市各里投票結果"),
-				tooltip.append("text").attr({"id":"hover",x:0,y:30}).style({'font-size':'17px'}).text("hover over a village or legend"),
-				tooltip.append("text").attr({"id":"dv_name", x:0,y:30}).text(),
-				tooltip.append("text").attr({"id":"v_KMT", x:0,y:60}).text(),
-				tooltip.append("text").attr({"id":"v_DPP", x:0,y:90}).text(),
-				tooltip.append("text").attr({"id":"v_PFP", x:0,y:120}).text();
-			};	
-			tooltip();
+		tooltip = function(){
+			tooltip = svg.append("g").attr({
+						"class": "map_tooltip",
+						transform: "translate(10, 10)"
+			}),
+			tooltip.append("text").attr({'class': 'title'})
+							.style({"font-size":20+"px", fill:"#444", "font-weight":"bold"})
+							.text("台北市各里投票結果"),
+			tooltip.append("text").attr({"id":"hover",x:0,y:30}).style({'font-size':'17px'}).text("hover over a village or legend"),
+			tooltip.append("text").attr({"id":"dv_name", x:0,y:30}).text(),
+			tooltip.append("text").attr({"id":"v_KMT", x:0,y:60}).text(),
+			tooltip.append("text").attr({"id":"v_DPP", x:0,y:90}).text(),
+			tooltip.append("text").attr({"id":"v_PFP", x:0,y:120}).text();
+		};	
+		tooltip();
 			
 	}());
